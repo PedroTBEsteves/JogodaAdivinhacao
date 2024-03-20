@@ -1,0 +1,89 @@
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        // Saudação do Jogo
+        Console.WriteLine("Bem-vindo! Adivinhe o número do bingo! Para vencer, basta adivinhar o número, mas a cada rodada perdida, o número se soma e caso chegue em 100, você perdeu!");
+
+        // Declaração de Reset do Jogo
+        bool replay = true;
+
+        // Condição de Repetição
+        while (replay)
+        {
+            // Declarações de Variáveis da Aleatoriedade
+            Random random = new Random();
+            int valorAnterior = 0;
+            int cicloInicial = 1;
+            int ciclo = 1;
+
+            // Loop do Jogo
+            while (true)
+            {
+                // Geração de Número Aleatório Alvo
+                int numeroAleatorio = random.Next(1, 21) + valorAnterior;
+
+                // Input Primeiro Turno
+                  if (ciclo == 1)
+                    {
+                      Console.WriteLine("Digite um número de 1 a 20:");
+                      ciclo = 1 + cicloInicial;
+
+                    }
+                  else
+                {
+                  // Pedido de Input do Jogador Ciclo 1+
+                  Console.WriteLine($"Digite um número:");
+                }
+              
+                // Conversão do Input do Jogador para Variável
+                int palpite = Convert.ToInt32(Console.ReadLine());
+
+                // Condição de OutPut ao Jogador
+                if (palpite > 1 && palpite <= 100)
+                  {
+
+                    // Exibir o palpite do jogador e a resposta correta
+                    Console.WriteLine($"Seu palpite foi: {palpite}");
+                    Console.WriteLine($"Resposta correta: {numeroAleatorio}");
+
+                    // Verificação do Resultado do Jogo
+                    valorAnterior = numeroAleatorio;
+              
+                    // Vitória do Jogador
+                    if (palpite == numeroAleatorio)
+                    {
+                        Console.WriteLine("Parabéns! Você acertou o número do bingo!");
+                        break; // Sai do loop interno se o jogador acertar
+                    }
+                  }
+              // Caso o jogador digite um número fora do intervalo válido
+                else
+                  {
+                    Console.WriteLine("Por favor, digite um número válido");
+                  }
+
+                // Condição de Derrota por Valor Alto
+                if (numeroAleatorio > 100)
+                {
+                  // Reset do Jogo
+                    Console.WriteLine("O número do bingo foi maior que 100, o jogo acabou!");
+                  // Sai do loop interno se o número aleatório ultrapassar 100
+                    break; 
+                }
+            }
+
+            // Perguntar ao usuário se deseja reiniciar o jogo
+            Console.WriteLine("Continuar? S/N?");
+            string resposta = Console.ReadLine();
+
+            // Verificar a Resposta da Repetição
+            if (resposta.ToLower() != "s")
+            {
+                replay = false;
+            }
+        }
+    }
+}
