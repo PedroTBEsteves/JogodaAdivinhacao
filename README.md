@@ -25,7 +25,11 @@ Caso o jogador não acerte o número até a máquina puxar um número maior que 
 
 Funcionalidades: 
 As funcionalidades do jogo são a implementação de rodadas dentro de um contexto competitivo;
+
 Criação de uma ferramenta de declaração de variáveis aleatórias dentro de um contexto de condição;
+
 Verificações de Vitória ou Derrota;
+
 Registro e memorização de variáveis dentro de um contexto de rodadas dentro de uma partida;
+
 Verificação da vontade do jogador de continuar jogando ou parar.
