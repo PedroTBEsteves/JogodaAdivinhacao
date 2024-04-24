@@ -1,4 +1,4 @@
-# JogodaAdivinhacao
+# JogodaAdivinhacao [Não, é jogo das Bolas]
  
 (ATENÇÃO O RESTO DA DOCUMENTAÇÃO ESTÁ NO COMMIT DO ARQUIVO DO JOGO)
 
